@@ -71,10 +71,48 @@ class Linkedlist:
         temp=self.head
         for _ in range(index):
             temp=temp.next
-        return temp.value
+        return temp
     
-mylinklist=Linkedlist(0)
-mylinklist.append(1)
-mylinklist.append(2)
+    def Set(self,index,value):
+        if index < 0 or index > self.length:
+            return False
+        temp=self.head
+        for _ in range(index):
+            temp=temp.next
+        temp.value=value
+        return True
+
+    def Insert(self,index,value):
+        if index<0 or index >self.length:
+            return False
+        if index==0:
+            return self.prepend(value)
+        if index==self.length:
+            return self.append(value)
+        NewNode=Node(value)
+        temp=self.Get(index-1)
+        NewNode.next=temp.next
+        temp.next=NewNode
+        self.length+=1
+        return True
+
+    def Remove(self,index):
+        if index<0 or index >self.length:
+            return False
+        if index ==0:
+            return self.popfirst()
+        if index ==self.length:
+            return self.pop()
+        pre=self.Get(index-1)
+        temp=pre.next
+        pre.next=temp.next
+        temp.next=None
+        self.length-=1
+        return temp.value
+
+mylinklist=Linkedlist(11)
 mylinklist.append(3)
-print(mylinklist.Get(1))
+mylinklist.append(23)
+mylinklist.append(7)
+print(mylinklist.Remove(2),'\n')
+mylinklist.printlist()

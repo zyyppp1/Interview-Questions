@@ -73,8 +73,19 @@ class Linkedlist:
             temp=temp.next
         return temp.value
     
+    def Set(self,index,value):
+        if index < 0 or index > self.length:
+            return False
+        temp=self.head
+        for _ in range(index):
+            temp=temp.next
+        temp.value=value
+        return True
+
 mylinklist=Linkedlist(0)
 mylinklist.append(1)
 mylinklist.append(2)
 mylinklist.append(3)
+print(mylinklist.Get(1))
+mylinklist.Set(1,5)
 print(mylinklist.Get(1))
