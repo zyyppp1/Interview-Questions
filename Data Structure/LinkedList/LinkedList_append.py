@@ -1,20 +1,27 @@
 class Node:
-    def __init__(self,value):
-        self.value=value
-        self.next=None
-    
-class Linkedlist:
-    def __init__(self,value):
-        newNode=Node(value)
-        self.head=newNode
-        self.tail=newNode
-        self.length=1
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+        
 
-    def printlist(self):
-        temp=self.head
+class LinkedList:
+    def __init__(self, value):
+        new_node = Node(value)
+        self.head = new_node
+        self.tail = new_node
+        self.length = 1
+
+    def print_list(self):
+        temp = self.head
         while temp is not None:
             print(temp.value)
-            temp=temp.next 
+            temp = temp.next
+            
+    def make_empty(self):
+        self.head = None
+        self.tail = None
+        self.length = 0
+        
 
     def append(self,value):
         newNode=Node(value)
@@ -26,15 +33,35 @@ class Linkedlist:
             self.tail=newNode
         self.length+=1
         return True
+        
+
+
+
+
+my_linked_list = LinkedList(1)
+my_linked_list.make_empty()
+
+my_linked_list.append(1)
+my_linked_list.append(2)
+
+print('Head:', my_linked_list.head.value)
+print('Tail:', my_linked_list.tail.value)
+print('Length:', my_linked_list.length, '\n')
+
+print('Linked List:')
+my_linked_list.print_list()
+
+
+
+"""
+    EXPECTED OUTPUT:
+    ----------------
+    Head: 1
+    Tail: 2
+    Length: 2 
+
+    Linked List:
+    1
+    2
     
-myLinkedlist=Linkedlist(10)
-myLinkedlist.printlist()
-
-myLinkedlist.append(1)
-myLinkedlist.printlist()
-
-myLinkedlist.append(2)
-myLinkedlist.printlist()
-
-myLinkedlist.append(3)
-myLinkedlist.printlist()
+"""
