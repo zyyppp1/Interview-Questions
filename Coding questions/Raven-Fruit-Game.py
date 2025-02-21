@@ -3,7 +3,7 @@ import random
 class FruitGame:
     def __init__(self, num_players):
         self.fruits = {"Apple": 10, "Banana": 10, "Cherry": 10, "Grape": 10}  #set fruits
-        self.raven_position = 0  # raven
+        self.raven_position = 0  # raven position init
         self.max_raven_steps = 9  # raven's end
         self.players = [f"Player {i+1}" for i in range(num_players)]
         self.dice_faces = [1, 2, 3, 4, 5, 6]  # dice set
@@ -17,6 +17,8 @@ class FruitGame:
         if self.fruits[fruit] > 0:
             self.fruits[fruit] -= 1
             print(f"{self.players[self.current_player_index]} removed one {fruit}. Remaining: {self.fruits[fruit]}")
+        else:
+            print(f"{self.players[self.current_player_index]} failed to remove {fruit}. 2no one left")
 
     def remove_two_random_fruits(self):
         #find the left fruits , which is available for remove.
@@ -34,6 +36,7 @@ class FruitGame:
             self.remove_fruit(fruit)
 
     def move_raven(self):
+        print(f"{self.players[self.current_player_index]} roll a dice for 6 ")
         self.raven_position += 1
         print(f"Raven moves forward! Position: {self.raven_position}/{self.max_raven_steps}")
 
