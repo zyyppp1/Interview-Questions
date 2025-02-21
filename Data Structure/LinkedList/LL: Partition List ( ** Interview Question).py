@@ -146,7 +146,29 @@ class LinkedList:
 #   +===================================================+
 
 
+    def partition_list(self, x):
+        if self.head is None:
+            return None
+        
+        dummy1=Node(0)
+        dummy2=Node(0)
+        prev1=dummy1
+        prev2=dummy2
+        current=self.head
+        while current:
+            if current.value<x:
+                prev1.next=current
+                prev1=prev1.next
+            else:
+                prev2.next=current
+                prev2=prev2.next
+            current=current.next
 
+        prev1.next = None
+        prev2.next = None
+
+        prev1.next=dummy2.next
+        self.head=dummy1.next
 
 
 # Function to convert linked list to Python list
