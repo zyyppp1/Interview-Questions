@@ -7,7 +7,7 @@ class FruitGame:# Yeah , maybe I shoul use a class...
         self.fruits = {"Apple": 10, "Banana": 10, "Cherry": 10, "Grape": 10}  #set fruits
         self.raven_position = 0  # raven position init
         self.max_raven_steps = 9  # raven's end
-        # use for loop to set players in 
+        # use for loop to create a user list and name it with player (index)
         self.players = [f"Player {i+1}" for i in range(num_players)]
         self.dice_faces = [1, 2, 3, 4, 5, 6]  # dice list / yeah , better use a list 
         self.current_player_index = 0  # user index
