@@ -13,7 +13,7 @@
 ######################################
 
 def group_anagrams(strings):
-    
+    for i in r
 
 
 print("1st set:")
