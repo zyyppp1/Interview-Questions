@@ -71,12 +71,15 @@ class MaxHeap:
             else:
                 return
                        
-    # WRITE THE REMOVE METHOD HERE #
-    #                              #
-    #                              #
-    #                              #
-    #                              #
-    ################################
+    def remove(self):
+        if len(self.heap)==0:
+            return None
+        if len(self.heap)==1:
+            return self.heap.pop()
+        maxnum=self.heap[0]
+        self.heap[0]=self.heap.pop()
+        self._sink_down(0)
+        return maxnum
     
     
     

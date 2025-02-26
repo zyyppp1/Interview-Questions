@@ -44,12 +44,22 @@ class MaxHeap:
             self._swap(current, self._parent(current))
             current = self._parent(current)
 
-    # WRITE THE _SINK_DOWN METHOD HERE #
-    #                                  #
-    #                                  #
-    #                                  #
-    #                                  #
-    ####################################
+    def _sink_down(self,index):
+        maxindex=index
+        while True:
+            leftindex=self._left_child(index)
+            rightindex=self._right_child(index)
+            
+            if leftindex<len(self.heap) and self.heap[leftindex]>self.heap[maxindex]:
+                maxindex=leftindex
+            if rightindex<len(self.heap) and self.heap[rightindex]>self.heap[maxindex]:
+                maxindex=rightindex
+                
+            if maxindex!=index:
+                self._swap(maxindex,index)
+                index=maxindex
+            else:
+                return
                        
     def remove(self):
         if len(self.heap) == 0:

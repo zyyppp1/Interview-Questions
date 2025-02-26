@@ -42,13 +42,42 @@ class MinHeap:
             self._swap(current, self._parent(current))
             current = self._parent(current)
 
-    # WRITE THE _SINK_DOWN METHOD HERE #
-    #                                  #
-    #                                  #
-    #                                  #
-    #                                  #
-    ####################################
-    
+    # def _sink_down(self, index):
+    #     min_index = index
+    #     while True:
+    #         left_index = self._left_child(index)
+    #         right_index = self._right_child(index)
+
+    #         if (left_index < len(self.heap) and 
+    #                 self.heap[left_index] < self.heap[min_index]):
+    #             min_index = left_index
+
+    #         if (right_index < len(self.heap) and 
+    #                 self.heap[right_index] < self.heap[min_index]):
+    #             min_index = right_index
+
+    #         if min_index != index:
+    #             self._swap(index, min_index)
+    #             index = min_index
+    #         else:
+    #             return
+
+    def _sink_down(self,index):
+        minindex=index
+
+        while True:
+            leftindex=self._left_child(index)
+            rightindex=self._right_child(index)
+
+            if leftindex<len(self.heap) and self.heap[leftindex]<self.heap[minindex]  :
+                minindex=leftindex
+            if  rightindex<len(self.heap) and self.heap[rightindex]<self.heap[minindex] :
+                minindex=rightindex
+            if minindex!=index:
+                self._swap(index,minindex)
+                index=minindex
+            else:
+                return 
 
     def remove(self):
         if len(self.heap) == 0:
