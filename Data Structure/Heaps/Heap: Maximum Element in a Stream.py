@@ -104,6 +104,13 @@ class MaxHeap:
 #   Indent all the way to the left.        #
 #                                          #
 ############################################
+def stream_max(nums):
+    myheap=MaxHeap()
+    output=[]
+    for i,num in enumerate(nums):
+        myheap.insert(num)
+        output.append(myheap.heap[0])
+    return output
 
 
 
