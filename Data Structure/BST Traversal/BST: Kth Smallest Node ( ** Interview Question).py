@@ -70,6 +70,7 @@ class BinarySearchTree:
             return None
  
         left_result = self.kth_smallest_helper(node.left, k)
+        
         if left_result is not None:
             return left_result
  
@@ -78,6 +79,7 @@ class BinarySearchTree:
             return node.value
  
         right_result = self.kth_smallest_helper(node.right, k)
+
         if right_result is not None:
             return right_result
  
