@@ -87,6 +87,17 @@ class BinarySearchTree:
 
     def __sorted_list_to_bst(self, nums, left, right):
             
+        if left > right:
+            return None
+        else:
+            middlenode=(left + right) // 2
+            currentnode=Node(nums[middlenode])
+
+            currentnode.left=self.__sorted_list_to_bst(nums, left, middlenode-1)
+
+            currentnode.right=self.__sorted_list_to_bst(nums, middlenode+1,right)
+
+            return currentnode
         #   +====================================================+
         #   |               WRITE YOUR CODE HERE                 |
         #   | Description:                                       |
