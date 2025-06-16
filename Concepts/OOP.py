@@ -86,7 +86,9 @@ for animal in animals:
 # Abstraction is the practice of hiding complex details and exposing only necessary features.
 #It is achieved using abstract classes and abstract methods.
 #Abstract classes act as blueprints that enforce certain methods in subclasses.
-#Subclasses must implement the abstract methods (or they will also remain abstract).from abc import ABC, abstractmethod
+#Subclasses must implement the abstract methods (or they will also remain abstract).
+
+# from abc import ABC, abstractmethod
 
 # class Animal(ABC):  # Abstract base class (ABC)
 #     def __init__(self, name):
